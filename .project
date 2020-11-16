@@ -3,7 +3,7 @@
 	<name>cs336</name>
 	<comment></comment>
 	<projects>
-		<project>mysql-connector-java-5.1.29-bin</project>
+		<project>mysql-connector-java-5.1.49-bin</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
