@@ -10,7 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome!</h3>
 
 <%
 	String username = request.getParameter("username");
@@ -29,7 +28,7 @@
     if (rs.next()) {
         session.setAttribute("user", username); // the username will be stored in the session
         out.println("welcome " + username);
-        out.println("<a href='logout.jsp'>Log out</a>");
+        out.println("<a href='logout.jsp'>Log out</a>"); // I have no idea why this is here since it literally redirects you anyway but the example had it
         response.sendRedirect("success.jsp");
     } else {
         out.println("Invalid password <a href='login.jsp'>try again</a>");

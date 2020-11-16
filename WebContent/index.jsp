@@ -9,21 +9,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
 
-<%
-    if ((session.getAttribute("user") == null)) {
-%>
-		You are not logged in<br/>
-		<a href="login.jsp">Please Login</a>
-<%
-	} else {
-%>
-		Welcome <%=session.getAttribute("user")%>  <!-- this will display the username that is stored in the session. -->
-		<a href='logout.jsp'>Log out</a>
-<%
-    }
-%>
+<body>
+	<h3>Welcome!</h3>
+
+	<a href="login.jsp">Login</a><br>
+	<a href="signup.jsp">Sign up</a>
 
 </body>
+
 </html>
