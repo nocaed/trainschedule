@@ -22,12 +22,12 @@
 	
 	Statement st = con.createStatement();
 	ResultSet rs;
-    rs = st.executeQuery("select * from Customer where username='" + username + "'");
+    rs = st.executeQuery("select * from Customer where username='" + username + "'"); // insert into Customer values (username, password)
     
     if (rs.next()) {
 		out.println("Username already taken!");
     } else {
-        out.println("Creating account");
+        out.println("Creating account"); // TODO: Create account
     }
 
 %>

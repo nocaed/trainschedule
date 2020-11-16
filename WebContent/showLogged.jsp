@@ -27,7 +27,7 @@
     
     if (rs.next()) {
         session.setAttribute("user", username); // the username will be stored in the session
-        out.println("welcome " + username);
+        out.println("welcome EXAMPLE EXAMPLE!!!" + username);
         out.println("<a href='logout.jsp'>Log out</a>"); // I have no idea why this is here since it literally redirects you anyway but the example had it
         response.sendRedirect("success.jsp");
     } else {
