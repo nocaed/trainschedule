@@ -26,11 +26,23 @@
     
     if (rs.next()) {
 		out.println("Username already taken!");
+		//todo: give the user a chance to sign up with another username
+		out.println("<br> Please sign in using a different username<br> <a href='signup.jsp'>login</a>");
+		
     } else {
-        out.println("Creating account"); // TODO: Create account
+        out.println("Thanks for signing up " + username);// TODO: Create account
+       
+       	PreparedStatement update = con.prepareStatement
+       	("INSERT INTO Customer VALUES (?, ?)");
+
+        	update.setString(1, username);
+        	update.setString(2, pwd);
+        	update.executeUpdate();
+        	out.println("<br> Please Log in <br> <a href='login.jsp'>login</a>");
     }
 
 %>
+
 
 </body>
 </html>
