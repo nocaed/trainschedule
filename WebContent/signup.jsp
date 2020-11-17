@@ -23,6 +23,7 @@
   <input type="submit" value="Log in">
 </form>
 
+ <a href='index.jsp'>Go to welcome page</a>
 
 </body>
 

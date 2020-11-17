@@ -43,6 +43,7 @@
 
 %>
 
+ <a href='index.jsp'>Go to welcome page</a>
 
 </body>
 </html>
