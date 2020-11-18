@@ -15,7 +15,7 @@
 
 <h3>Login</h3>
 
-<form method="get" action="showLogged.jsp">
+<form method="post" action="showLogged.jsp">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>

@@ -15,7 +15,7 @@
 
 <h3>Sign up</h3>
 
-<form method="get" action="showSigned.jsp">
+<form method="post" action="showSigned.jsp">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
