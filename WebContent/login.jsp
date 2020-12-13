@@ -20,6 +20,9 @@
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password"> <br>
+  <label for="userType">Are you an Employee?</label><br>
+  <input type="checkbox" id="userType" name="userType" value="true">
+  <label for="userType">Yes</label><br>
   <input type="submit" value="Log in">
 </form>
 
