@@ -20,6 +20,22 @@
   <input type="text" id="username" name="username"><br>
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password"> <br>
+  <label for="firstname">First name:</label><br>
+  <input type="text" id="firstname" name="firstname"> <br>
+  <label for="lastname">Last name:</label><br>
+  <input type="text" id="lastname" name="lastname"> <br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"> <br>
+  <label for="disabled">Are you disabled?</label><br>
+  <input type="checkbox" id="disabled" name="disabled" value="yes">
+  <label for="disabled"> I am disabled</label><br>
+  
+  <label for="start">Start date:</label>
+
+	<input type="date" id="dob" name="dob"
+       
+       min="1969-01-01" max="2077-12-31">
+       
   <input type="submit" value="Log in">
 </form>
 
