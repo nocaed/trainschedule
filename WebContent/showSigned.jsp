@@ -13,6 +13,16 @@
 
 <%
 	String username = request.getParameter("username");
+
+	String disabled = request.getParameter("disabled") == null ? "0" : "1";
+	
+	String firstName = request.getParameter("firstname");
+	
+	String lastName = request.getParameter("lastname");
+	
+	String email = request.getParameter("email");
+	
+	String dob = request.getParameter("dob");
 	
 	String pwd = request.getParameter("password");
 	
@@ -33,10 +43,15 @@
         out.println("Thanks for signing up " + username);// TODO: Create account
        
        	PreparedStatement update = con.prepareStatement
-       	("INSERT INTO Customer VALUES (?, ?)");
+       	("INSERT INTO Customer VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-        	update.setString(1, username);
-        	update.setString(2, pwd);
+        	update.setString(1, username); // Username
+        	update.setString(2, disabled);
+        	update.setString(3, firstName);
+        	update.setString(4, lastName);
+        	update.setString(5, email);
+        	update.setString(6, dob);
+        	update.setString(7, pwd);
         	update.executeUpdate();
         	out.println("<br> Please Log in <br> <a href='login.jsp'>login</a>");
     }

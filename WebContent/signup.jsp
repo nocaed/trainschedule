@@ -27,10 +27,10 @@
   <label for="email">Email:</label><br>
   <input type="text" id="email" name="email"> <br>
   <label for="disabled">Are you disabled?</label><br>
-  <input type="checkbox" id="disabled" name="disabled" value="yes">
+  <input type="checkbox" id="disabled" name="disabled" value="true">
   <label for="disabled"> I am disabled</label><br>
   
-  <label for="start">Start date:</label>
+  <label for="start">Date of Birth:</label>
 
 	<input type="date" id="dob" name="dob"
        
