@@ -13,7 +13,8 @@
 
 <%
 	String username = request.getParameter("username");
-	out.println(username);
+	
+	boolean isCustomer = request.getParameter("userType") == null;
 	
 	String pwd = request.getParameter("password");
 	
@@ -23,13 +24,20 @@
 	
 	Statement st = con.createStatement();
 	ResultSet rs;
-    rs = st.executeQuery("select * from Customer where username='" + username + "' and password='" + pwd + "'");
+    rs = st.executeQuery("select * from " + (isCustomer ? "Customer" : "Employee") + " where username='" + username + "' and password='" + pwd + "'");
     
     if (rs.next()) {
         session.setAttribute("user", username); // the username will be stored in the session
         out.println("welcome EXAMPLE EXAMPLE!!!" + username);
         out.println("<a href='logout.jsp'>Log out</a>"); // I have no idea why this is here since it literally redirects you anyway but the example had it
-        response.sendRedirect("success.jsp");
+        
+        if (isCustomer) {
+        	response.sendRedirect("customer.jsp");
+        } else if (rs.getString(6).equals("0")) {
+        	response.sendRedirect("customerrep.jsp");
+        } else {
+        	response.sendRedirect("admin.jsp");
+        }
     } else {
         out.println("Invalid password <a href='login.jsp'>try again</a>");
     }

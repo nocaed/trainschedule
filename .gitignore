@@ -4,3 +4,4 @@ WebContent/WEB-INF/
 .project
 .classpath
 build/
+/bin/

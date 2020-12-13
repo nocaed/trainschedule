@@ -30,13 +30,13 @@
   <input type="checkbox" id="disabled" name="disabled" value="true">
   <label for="disabled"> I am disabled</label><br>
   
-  <label for="start">Date of Birth:</label>
+  <label for="start">Date of Birth (format: yyyy-mm-dd):</label><br>
 
 	<input type="date" id="dob" name="dob"
        
        min="1969-01-01" max="2077-12-31">
        
-  <input type="submit" value="Log in">
+  <input type="submit" value="Log in"><br>
 </form>
 
  <a href='index.jsp'>Go to welcome page</a>
