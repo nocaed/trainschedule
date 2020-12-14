@@ -6,21 +6,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Revenue per transit line</title>
+<title>Sales Report</title>
 </head>
-<% 
-if(session.getAttribute("user")==null){
+<%
+    if ((session.getAttribute("user") == null)) {
 %>
-
 You are not logged in<br/>
-<a href='index.jsp'>Login</a>
-<% 
-} else { 
+<a href="index.jsp">Please Login</a>
+<%} else {
 %>
-
 <body>
-<%} %>
 
+<%} %>
 
 </body>
 </html>

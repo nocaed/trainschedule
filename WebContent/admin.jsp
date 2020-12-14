@@ -24,24 +24,14 @@ You are not logged in<br/>
 <center><h1>Welcome to the Administrator's profile</h1>	
 	<br>
 	<h2>Tools:</h2>
-	<!-- comment -->
-	<!-- comment2 -->
-	<% 
-	/*
-	ApplicationDB db = new ApplicationDB();	
-	Connection con = db.getConnection();
-	
-	Statement st = con.createStatement();
-	ResultSet rs;
-	*/
-	%>
-	
-	<br><a href='manage.jsp'>Manage Customer Representatives</a>
+	<br><a href='addCR.jsp'>Add Representative</a>
+	<br><br><a href='editCR.jsp'>Edit Existing Representative</a>
+	<br><br><a href='deleteCR.jsp'>Delete Existing Representative</a>
 	<br><br><a href='sales.jsp'>Sales Report by month</a>
-	<br><br><a href='bytransit'>List of Reservations by Transit Line</a>
-	<br><br><a href='bycustomer'>List of Reservations by Customer Name</a>
-	<br><br><a href='transitRev'>List of Revenue per Transit Line</a>
-	<br><br><a href='customerRev'>List of Revenue per Customer Name</a>
+	<br><br><a href='bytransit.jsp'>List of Reservations by Transit Line</a>
+	<br><br><a href='bycustomer.jsp'>List of Reservations by Customer Name</a>
+	<br><br><a href='transitRev.jsp'>List of Revenue per Transit Line</a>
+	<br><br><a href='customerRev.jsp'>List of Revenue per Customer Name</a>
 	<br><br><a href='logout.jsp'>Logout</a>
 	
 	<% 

@@ -8,7 +8,17 @@
 <meta charset="UTF-8">
 <title>Revenue per customer name</title>
 </head>
-<body>
+<% 
+if(session.getAttribute("user")==null){
+%>
 
+You are not logged in<br/>
+<a href='index.jsp'>Login</a>
+<% 
+} else { 
+%>
+
+<body>
+<%} %>
 </body>
 </html>
