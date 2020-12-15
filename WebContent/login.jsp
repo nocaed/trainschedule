@@ -15,19 +15,33 @@
 
 <h3>Login</h3>
 
+
 <form method="post" action="showLogged.jsp">
+	<table>
+	<tr><td>
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username"><br>
+  </td></tr>
+  
+  <tr><td>
   <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password"> <br>
-  <label for="userType">Are you an Employee?</label><br>
+  <input type="password" id="password" name="password"> 
+  </td></tr>
+  
+  <tr><td>
+  <label for="userType">Check here if you are a Customer Representative or Administrator</label>
   <input type="checkbox" id="userType" name="userType" value="true">
   <label for="userType">Yes</label><br>
-  <input type="submit" value="Log in">
+  </td></tr>
+  
+  <tr><td>
+  
+  <input type="submit" value="LOGIN">
+  </td></tr>
+</table>  
 </form>
 
- <a href='index.jsp'>Go to welcome page</a>
-
+<h4><a href='index.jsp'>Go to welcome page</a></h4> 
 </body>
 
 </html>

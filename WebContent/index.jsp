@@ -7,14 +7,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome</title>
 </head>
 
 <body>
-	<h3>Welcome!</h3>
-
-	<a href="login.jsp">Login</a><br>
-	<a href="signup.jsp">Sign up</a>
+	<h3>Welcome to Online Railway Booking System: Group 48</h3>
+	<table>
+	<tr><td><h4>Please click on one of the following options:</h4></td></tr>
+	<tr><td><a href="login.jsp">Login with an existing account</a></td></tr>
+	<tr><td><a href="signup.jsp">Sign up for a new account</a></td></tr>
+	
+	</table>
 
 </body>
 

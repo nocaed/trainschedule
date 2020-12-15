@@ -13,33 +13,43 @@
 
 <body>
 
-<h3>Sign up</h3>
+<h3>Sign up here:</h3>
 
 <form method="post" action="showSigned.jsp">
-  <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password"> <br>
-  <label for="firstname">First name:</label><br>
-  <input type="text" id="firstname" name="firstname"> <br>
-  <label for="lastname">Last name:</label><br>
-  <input type="text" id="lastname" name="lastname"> <br>
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email"> <br>
-  <label for="disabled">Are you disabled?</label><br>
+<table>
+
+<tr><td> 
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"></td></tr>
+ <tr><td> 
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"> </td></tr>
+ <tr><td> 
+  <label for="firstname">First name:</label>
+  <input type="text" id="firstname" name="firstname"></td></tr>
+ <tr><td> 
+  <label for="lastname">Last name:</label>
+  <input type="text" id="lastname" name="lastname"> </td></tr>
+ <tr><td> 
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email"></td></tr>
+ <tr><td> 
+  <label for="disabled">Check here if you are disabled</label>
   <input type="checkbox" id="disabled" name="disabled" value="true">
-  <label for="disabled"> I am disabled</label><br>
-  
-  <label for="start">Date of Birth (format: yyyy-mm-dd):</label><br>
+  <label for="disabled"> Yes</label></td></tr>
+  <tr><td> 
+  <label for="start">Date of Birth (format: yyyy-mm-dd):</label>
 
 	<input type="date" id="dob" name="dob"
        
        min="1969-01-01" max="2077-12-31">
-       
-  <input type="submit" value="Log in"><br>
+  </td></tr>
+  <tr><td>      
+  <input type="submit" value="SIGN IN"></td></tr>
+  </table>
 </form>
 
- <a href='index.jsp'>Go to welcome page</a>
+ <h4><a href='index.jsp'>Go back to welcome page</a></h4>
 
 </body>
 
