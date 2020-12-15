@@ -6,13 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Customer Representative</title>
 </head>
 <% 
 if(session.getAttribute("user")==null){
 %>
-
-You are not logged in<br/>
+<h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
@@ -20,8 +19,9 @@ You are not logged in<br/>
 <body> 
 <h2>Add Information for New Customer Representative</h2>
 <table>
-<form method="post" action="addCRS.jsp">
-	<tr>
+<tr>
+
+	
 		<td><label for="ssn">SSN in Format ###-##-####:</label></td>
 		<td><input type="text" id="ssn" name="ssn"></td>
 	</tr>
@@ -43,8 +43,17 @@ You are not logged in<br/>
 	</tr>
 	<tr>
 		<td></td>
-		<td><input type="submit" value="Register Customer Representative"></td>
-	</tr></form></table>
+		<td>
+		<form method="post" action="addCRS.jsp">
+		<input type="submit" value="Register Customer Representative"></form>
+		</td>
+		
+		<td>
+		<form method = "post" action="admin.jsp">
+		<input type="submit" value="Cancel"></form>
+		</td>
+		</tr>
+		</table>
 	
 
 

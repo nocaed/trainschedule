@@ -14,8 +14,7 @@
 <% 
 if(session.getAttribute("user")==null){
 %>
-
-You are not logged in<br/>
+<h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
@@ -32,6 +31,7 @@ You are not logged in<br/>
 	<br><br><a href='bycustomer.jsp'>List of Reservations by Customer Name</a>
 	<br><br><a href='transitRev.jsp'>List of Revenue per Transit Line</a>
 	<br><br><a href='customerRev.jsp'>List of Revenue per Customer Name</a>
+	<br><br><a href='bestcustomer.jsp'>Best Customer</a>
 	<br><br><a href='logout.jsp'>Logout</a>
 	
 	<% 

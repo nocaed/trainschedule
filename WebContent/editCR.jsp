@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Edit Customer Representative</title>
 </head>
 <% if(session.getAttribute("user")==null){ %>
 You are not logged in<br/>
@@ -16,7 +16,7 @@ You are not logged in<br/>
 %>
 <body>
 <h2>Edit Existing Customer Representative Data </h2>
-<form method="post" action="editCRS.jsp">
+
 	<table>
 		<tr>
 		<td>Enter SSN of Customer Representative you want to edit:</td>
@@ -34,18 +34,17 @@ You are not logged in<br/>
 		<option value="5">Last Name</option>
 	</select>&nbsp;</td>
 	</tr>
-	<br>
-	<br>
+	
 	
 		<tr>
 		<td>Enter New Value:</td>
 		<td><input type="text" name="newVal"></td>
 		</tr>
-		<br>
-		<br>
+		
 		<tr> <td></td>
-		<td><input type="submit" value="UPDATE"></td>
-		</form>
+		<td><form method="post" action="editCRS.jsp">
+		<input type="submit" value="UPDATE">
+		</form></td>
 		<td>
 		<form method = "post" action="admin.jsp">
 		<input type="submit" value="CANCEL">

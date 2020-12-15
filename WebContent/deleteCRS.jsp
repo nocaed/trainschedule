@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Result</title>
 </head>
 <% if(session.getAttribute("user")==null){ %>
-You are not logged in<br/>
+<h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 

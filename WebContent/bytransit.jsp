@@ -12,13 +12,37 @@
 if(session.getAttribute("user")==null){
 %>
 
-You are not logged in<br/>
+<h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
 <body>
-
+ <h2>
+		Please enter the Transit Line name:
+	</h2>
+<table>
+			<form method="post" action="bytransitList.jsp">
+			<tr>
+				<td>Transit Line:</td>
+				<td><input type="text" name="line"></td>
+			</tr>
+			<tr>
+			<td>
+			</td>
+			<td>
+			<input type="submit" value="SUBMIT">
+			</td>
+			</tr></form>
+			<tr>
+			<td>
+			</td>
+			<td><form method="post" action="admin.jsp">
+			<input type="submit" value="CANCEL">
+			</form> </td>
+			</tr>
+			
+		</table>
 
 
 <% } %>

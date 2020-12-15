@@ -6,25 +6,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Delete Customer Representative</title>
 </head>
 <% if(session.getAttribute("user")==null){ %>
-You are not logged in<br/>
+<h3>You are not logged in</h3><br/>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
 <body>
 <h2>Delete Existing Employee</h2>
-<form method="post" action="deleteCRS.jsp">
+
 	<table>
 		<tr>
 		<td>Enter SSN of Customer Representative you want to Delete:</td>
 		<td><input type="text" name="SSN"></td>
 		</tr> 
 		<tr><td></td>
-		<td><input type="submit" value="DELETE"></td>
-		</form>
+		<td><form method="post" action="deleteCRS.jsp">
+		<input type="submit" value="DELETE">
+		</form></td>
 		<td>
 		<form method = "post" action="admin.jsp">
 		<input type="submit" value="CANCEL">
