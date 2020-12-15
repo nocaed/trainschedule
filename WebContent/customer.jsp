@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>This is the customer page!</h1>
-	<a href='browsing.jsp'>Browse Schedules</a>
-	<a href='reservations.jsp'>Make a Reservation</a>
+	<div>
+		<h1>This is the customer page!</h1>
+		<a href='browsing.jsp'>Browse Schedules</a>
+		<a href='reservations.jsp'>Make a Reservation</a>
+		<a href='customerquestions.jsp'>Ask/Search Questions</a>
+	</div>
 </body>
 </html>
