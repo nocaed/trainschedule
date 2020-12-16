@@ -24,7 +24,7 @@ public class CustomerSupportHandler {
 		// new statement
 		Statement st = conn.createStatement();
 		// select all tuples from QA
-		questions = st.executeQuery("select * from QA;");
+		questions = st.executeQuery("select question, answer, username from QA;");
 		return questions;
 	}
 	
@@ -55,7 +55,37 @@ public class CustomerSupportHandler {
 		// new statement
 		Statement st = conn.createStatement();
 		// select all tuples from QA where the question includes the keyword
-		questions = st.executeQuery("select * from QA where question like '%" + keyword + "%';");
+		questions = st.executeQuery("select question, answer, username from QA where question like '%" + keyword + "%';");
 		return questions;
+	}
+	
+	/**
+	 * Fetches all unanswered questions.
+	 * @return All questions where there is no answer
+	 * @throws SQLException
+	 */
+	public ResultSet allUnansweredQuestions() throws SQLException {
+		ResultSet questions = null;
+		Statement st = conn.createStatement();
+		questions = st.executeQuery("select question, answer, username from QA where answer is null");
+		return questions;
+	}
+	
+	/**
+	 * Updates a question to be answered.
+	 * @param q The question to update
+	 * @param a The answer to the question
+	 * @param ssn The SSN of the employee who answered the question
+	 * @throws SQLException
+	 */
+	public void answerQuestion(String q, String a, String ssn) throws SQLException {
+		// prepare query
+		PreparedStatement st = conn.prepareStatement("update QA set answer = ?, ssn = ? where question = ?");
+		// Insert values
+		st.setString(1, a);
+		st.setString(2, ssn);
+		st.setString(3, q);
+		// Execute query
+		st.executeUpdate();
 	}
 }

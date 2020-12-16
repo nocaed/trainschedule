@@ -4,9 +4,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Customer Representative Home Page</title>
 </head>
 <body>
-	<h1>This is the customer rep page!</h1>
+	<div>
+	<%
+	if(session.getAttribute("user")==null){
+	%>
+		<h3>You are not logged in</h3>
+		<a href='index.jsp'>Login</a>
+	<%
+	} else {
+	%>
+		<h1>Welcome Customer Representative!</h1><br>
+		<a href='answerquestions.jsp'>Answer Customer Questions</a><br>
+		<a href='logout.jsp'>Logout</a>
+		<%}%>
+	</div>
 </body>
 </html>

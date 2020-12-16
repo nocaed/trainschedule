@@ -28,7 +28,7 @@
 				// get individual values
 				String question = questions.getString(1);
 				String answer = questions.getString(2) == null ? "Unresolved" : questions.getString(2);
-				String user = questions.getString(4);
+				String user = questions.getString(3);
 				// create tablel row
 				out.println("<tr>" + 
 				"<td>" + user + "</td>" +
