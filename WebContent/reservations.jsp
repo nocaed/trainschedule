@@ -9,6 +9,19 @@
 <title>Reservations</title>
 </head>
 <body>
+<div>
+  <%
+    if(session.getAttribute("user") == null) {
+  %>
+  <h3>You are not logged in</h3>
+  <a href='index.jsp'>Login</a>
+  <%
+    } else {
+  %>
+  	<h1>Reservations</h1>
+		<a href = 'addResrvSched.jsp'>Make a reservation</a> <br>
+		<a href = 'browseResrvs.jsp'>Browse reservations</a>
+
 	<div>
 		<h1>This is the reservations page!</h1><br>
 		<%
@@ -23,5 +36,8 @@
 		}
 		%>
 	</div>
+
+  <%}%>
+  </div>
 </body>
 </html>
