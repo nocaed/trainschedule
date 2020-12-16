@@ -6,25 +6,27 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Customer Support</title>
+<title>Browse Questions By Keyword</title>
 </head>
 <body>
 	<div>
-		<h1>Welcome to Customer Support!</h1><br>
-		<%
-		if(session.getAttribute("user")==null){
-		%>
+	<%
+	if(session.getAttribute("user")==null){
+	%>
 		<h3>You are not logged in</h3>
 		<a href='index.jsp'>Login</a>
-		<%
-		} else { 
-		%>
-		<a href='browsequestions.jsp'>Browse All Questions and Answers</a><br>
-		<a href='customerquestionkeyword.jsp'>Browse Questions and Answers By Keyword</a><br>
-		<a href='askquestionform.jsp'>Ask a Question</a><br>
+	<%
+	} else { 
+	%>
+		<h1>Enter Search Keyword</h1>
+		<form method="post" action="browseByKeyword.jsp">
+		  	<label for="keyword">Keyword:</label><br>
+  			<input type="text" id="keyword" name="keyword"><br>
+  			<input type="submit" value="Search">
+		</form>
 		<a href='customer.jsp'>Back to home page</a><br>
 		<a href='logout.jsp'>Logout</a>
-		<%}%>
+	<%}%>
 	</div>
 </body>
 </html>

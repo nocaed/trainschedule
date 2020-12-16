@@ -42,4 +42,20 @@ public class CustomerSupportHandler {
 		// execute query
 		st.executeUpdate();
 	}
+	
+	/**
+	 * Gets all questions/answers from the database where the question includes a specified keyword.
+	 * @param keyword The keyword that must be matched in the question
+	 * @return All matching tuples that contain the keyword in the question
+	 * @throws SQLException
+	 */
+	public ResultSet searchByKeyword(String keyword) throws SQLException {
+		// holds questions
+		ResultSet questions = null;
+		// new statement
+		Statement st = conn.createStatement();
+		// select all tuples from QA where the question includes the keyword
+		questions = st.executeQuery("select * from QA where question like '%" + keyword + "%';");
+		return questions;
+	}
 }

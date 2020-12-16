@@ -46,6 +46,8 @@
         	// set age and discount session attributes for later use
         	session.setAttribute("age", age);
         	session.setAttribute("discount", discount);
+        	// add user first name to session for personalized messages
+        	session.setAttribute("name", rs.getString(3));
         	// redirect to customer landing page
         	response.sendRedirect("customer.jsp");
         // redirect to customer representative landing page

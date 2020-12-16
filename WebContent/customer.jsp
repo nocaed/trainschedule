@@ -4,14 +4,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Customer Homepage</title>
 </head>
 <body>
 	<div>
-		<h1>This is the customer page!</h1>
-		<a href='browsing.jsp'>Browse Schedules</a>
-		<a href='reservations.jsp'>Make a Reservation</a>
-		<a href='customerquestions.jsp'>Ask/Search Questions</a>
+	<%
+	if(session.getAttribute("user")==null){
+	%>
+		<h3>You are not logged in</h3>
+		<a href='index.jsp'>Login</a>
+	<%
+	} else {
+		out.println("<h1>Welcome " + session.getAttribute("name") +"!</h1><br>");
+	%>
+		<a href='browsing.jsp'>Browse Schedules</a><br>
+		<a href='reservations.jsp'>Make a Reservation</a><br>
+		<a href='customerquestions.jsp'>Ask/Search Questions</a><br>
+		<a href='logout.jsp'>Logout</a>
+	<%}%>
 	</div>
 </body>
 </html>

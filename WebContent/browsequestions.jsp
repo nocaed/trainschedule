@@ -10,13 +10,7 @@
 </head>
 <body>
 	<div>
-		<h1>This is the customer support page!</h1><br>
-		<table width="100%">
-		<tr>
-			<th>Asked By</th>
-			<th>Question</th>
-			<th>Answer</th>
-		</tr>
+		<h1>View All Questions and Answers</h1><br>
 		<%
 		// check if user is logged in
 		Object username = session.getAttribute("user");
@@ -24,6 +18,7 @@
 			out.println("<h1>You are not logged in.</h1><br>");
 			out.println("<a href='index.jsp'>Login</a>");
 		} else {
+			out.println("<table width='100%'><tr><th>Asked By</th><th>Question</th><th>Answer</th></tr>");
 			// abstraction of customer support object
 			CustomerSupportHandler csh = new CustomerSupportHandler();
 			// get all questions in database
@@ -41,9 +36,11 @@
 				"<td>" + answer + "</td>" +
 				"</tr>");
 			}
+			out.println("</table>");
+			out.println("<a href='customer.jsp'>Back to home page</a><br>");
+			out.println("<a href='logout.jsp'>Logout</a>");
 		}
 		%>
-		</table>
 	</div>
 </body>
 </html>

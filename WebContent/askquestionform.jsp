@@ -10,12 +10,23 @@
 </head>
 <body>
 	<div>
+	<%
+	if(session.getAttribute("user")==null){
+	%>
+		<h3>You are not logged in</h3>
+		<a href='index.jsp'>Login</a>
+	<%
+	} else { 
+	%>
 		<h1>Ask a Question</h1>
 		<form method="post" action="askQuestion.jsp">
 		  	<label for="question">Question (Max 255 characters):</label><br>
   			<input type="text" id="question" name="question" maxlength="255"><br>
   			<input type="submit" value="Submit">
 		</form>
+		<a href='customer.jsp'>Back to home page</a><br>
+		<a href='logout.jsp'>Logout</a>
+	<%}%>
 	</div>
 </body>
 </html>
