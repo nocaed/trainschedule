@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>Browse Questions By Keyword</title>
 </head>
 <body>
