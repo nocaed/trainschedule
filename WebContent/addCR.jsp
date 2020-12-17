@@ -17,6 +17,7 @@ if(session.getAttribute("user")==null){
 } else { 
 %>
 <body> 
+<div>
 <h2>Add Information for New Customer Representative</h2>
 <table>
 <tr>
@@ -58,6 +59,6 @@ if(session.getAttribute("user")==null){
 
 
 <% } %>
-
+</div>
 </body>
 </html>

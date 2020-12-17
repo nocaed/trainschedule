@@ -12,7 +12,7 @@
 	</head>
 
 <body>
-
+<div>
 <h3>Login</h3>
 
 
@@ -42,6 +42,6 @@
 </form>
 
 <h4><a href='index.jsp'>Go to welcome page</a></h4> 
-</body>
+</div></body>
 
 </html>

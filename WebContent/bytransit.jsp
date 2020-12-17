@@ -18,7 +18,9 @@ if(session.getAttribute("user")==null){
 } else { 
 %>
 <body>
+ <div>
  <h2>
+ 
 		Please enter the Transit Line name:
 	</h2>
 <table>
@@ -46,5 +48,6 @@ if(session.getAttribute("user")==null){
 
 
 <% } %>
+</div>
 </body>
 </html>

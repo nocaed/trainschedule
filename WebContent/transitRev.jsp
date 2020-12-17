@@ -19,6 +19,7 @@ if(session.getAttribute("user")==null){
 %>
 
 <body>
+<div>
 <h3>List of Revenue per Transit Line:</h3>
 <%
 ApplicationDB db = new ApplicationDB();	
@@ -62,6 +63,6 @@ out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
 
 <%} %>
 
-
+</div>
 </body>
 </html>

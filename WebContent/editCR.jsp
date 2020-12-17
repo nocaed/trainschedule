@@ -15,6 +15,7 @@ You are not logged in<br/>
 } else { 
 %>
 <body>
+<div>
 <h2>Edit Existing Customer Representative Data </h2>
 
 	<table>
@@ -51,6 +52,6 @@ You are not logged in<br/>
 		</form></td></tr>
 	</table>	
 <%} %>
-
+</div>
 </body>
 </html>

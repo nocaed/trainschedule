@@ -14,7 +14,7 @@
 <% 
 } else { 
 %>
-<body>
+<body><div>
 <h2>Delete Existing Employee</h2>
 
 	<table>
@@ -34,6 +34,6 @@
 		
 <%} %>
 
-
+</div>
 </body>
 </html>

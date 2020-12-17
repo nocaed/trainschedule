@@ -16,12 +16,14 @@ if(session.getAttribute("user")==null){
 <%
 } else { 
 %>
-<body><h3>Best Customer:</h3>
+<body>
+<div>
+<h3>Best Customer:</h3>
 <% 
 ApplicationDB db = new ApplicationDB();	
 Connection con = db.getConnection();
 Statement st = con.createStatement();
-String query = "DROP TABLE IF EXISTS T";
+String query = "DROP TABLE IF EXISTS CustomerRevenue";
 int result=0;
 ResultSet rs;
 
@@ -29,12 +31,12 @@ result = st.executeUpdate(query);
 
 
 
-if(result>=0){
-	query = "CREATE TABLE T select c.username as username, c.first_name as first, c.last_name as last, sum(r.cost) as revenue from Reservation r, Customer c where r.username=c.username group by c.username";
+if(result>=-1){
+	query = "CREATE TABLE CustomerRevenue select c.username as username, c.first_name as first, c.last_name as last, sum(r.cost) as revenue from Reservation r, Customer c where r.username=c.username group by c.username";
 	result=st.executeUpdate(query);
 	//out.print("if1<br>");
 	if(result>0){
-		query="select username, first, last, revenue from T where revenue in (select max(revenue) from T)";
+		query="select username, first, last, revenue from CustomerRevenue where revenue in (select max(revenue) from CustomerRevenue)";
 		boolean res = st.execute(query);
 		//out.print("if2<br>");
 		if(res){
@@ -87,9 +89,19 @@ if(result>=0){
 				
 			}
 			out.print("</table>");
-			out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
+			
 			
 		}
+		
+		else if(result==0){
+			out.print("No reservations made by any customer<br>");
+			out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
+		}
+		
+		query = "DROP TABLE IF EXISTS CustomerRevenue";
+		result = st.executeUpdate(query);
+		out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
+		
 	}
 }
 
@@ -97,5 +109,6 @@ if(result>=0){
 
 %>
 <%} %>
+</div>
 </body>
 </html>

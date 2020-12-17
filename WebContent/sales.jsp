@@ -16,6 +16,7 @@
 <%} else {
 %>
 <body>
+<div>
 <%
 ApplicationDB db = new ApplicationDB();	
 Connection con = db.getConnection();
@@ -64,6 +65,6 @@ out.print("</table>");
 
 
 <%} %>
-
+</div>
 </body>
 </html>
