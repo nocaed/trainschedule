@@ -18,7 +18,8 @@
 	%>
 		<h1>Welcome Customer Representative!</h1><br>
 		<a href='answerquestions.jsp'>Answer Customer Questions</a><br>
-		<a href='schedulebystation.jsp'>View Train Schedules by Station</a>
+		<a href='schedulebystation.jsp'>View Train Schedules by Station</a><br>
+		<a href='customersbyreservationform.jsp'>Find Customers By Transit Line and Reservation Date</a><br>
 		<a href='logout.jsp'>Logout</a>
 		<%}%>
 	</div>
