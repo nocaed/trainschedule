@@ -19,7 +19,7 @@
 		out.println("<h1>Welcome " + session.getAttribute("name") +"!</h1><br>");
 	%>
 		<a href='browsing.jsp'>Browse Schedules</a><br>
-		<a href='reservations.jsp'>Make a Reservation</a><br>
+		<a href='reservations.jsp'>Reservations</a><br>
 		<a href='customerquestions.jsp'>Ask/Search Questions</a><br>
 		<a href='logout.jsp'>Logout</a>
 	<%}%>

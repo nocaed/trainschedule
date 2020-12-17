@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Insert title here</title>
+<title>Past Reservations</title>
 </head>
 <body>
 
@@ -25,8 +25,7 @@
 		    <th>Transit line</th>
 		    <th>Date of Reservation</th>
 		    <th>Cost</th>
-		    <th></th>
-		    <th>Column 5</th>
+		    <th>Type</th>
 		  </tr>
   <%
   	String username = (String) session.getAttribute("user");
@@ -41,11 +40,12 @@
 	    String transit_name = rs.getString(1);
 	    String date = rs.getString(2);
 	    double cost = rs.getDouble(3);
+	    String cost_str = (String) String.format("%.2f", cost);
 	    boolean is_roundtrip = rs.getBoolean(4);
 	      out.println("<tr>");
 	      out.println("<td>" + transit_name + "</td>");
-	      out.println("<td>$" + date + "</td>");
-	      out.println("<td>" + cost + "</td>");
+	      out.println("<td>" + date + "</td>");
+	      out.println("<td>$" + cost_str + "</td>");
 	      if (is_roundtrip) {
 	    	  out.println("<td> round trip</td>");
 	      } else {

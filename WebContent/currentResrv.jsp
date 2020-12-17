@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Insert title here</title>
+<title>Current Reservations</title>
 </head>
 <body>
 
@@ -48,12 +48,13 @@
 	    String transit_name = rs.getString(2);
 	    String date = rs.getString(3);
 	    double cost = rs.getDouble(4);
+	    String cost_str = (String) String.format("%.2f", cost);
 	    boolean is_roundtrip = rs.getBoolean(5);
 	      out.println("<tr>");
 	      out.println("<td>" + (i + 1) + "</td>");
 	      out.println("<td>" + transit_name + "</td>");
 	      out.println("<td>" + date + "</td>");
-	      out.println("<td>$" + cost + "</td>");
+	      out.println("<td>$" + cost_str + "</td>");
 	      if (is_roundtrip) {
 	    	  out.println("<td> round trip</td>");
 	      } else {

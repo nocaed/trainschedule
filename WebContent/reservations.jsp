@@ -19,12 +19,11 @@
   <%
     } else {
   %>
+  <div>
   	<h1>Reservations</h1>
 		<a href = 'addResrvSched.jsp'>Make a reservation</a> <br>
 		<a href = 'browseResrvs.jsp'>Browse reservations</a>
 
-	<div>
-		<h1>This is the reservations page!</h1><br>
 		<%
 		Object username = session.getAttribute("user");
 		if(username == null) {
@@ -33,10 +32,9 @@
 		} else {
 			int age = Integer.parseInt(session.getAttribute("age").toString());
 			double discount = Double.parseDouble(session.getAttribute("discount").toString());
-			out.println("<h1>Age: " + age + "</h1><br><h1>Discount: " + discount + "</h1>");
 		}
 		%>
-	</div>
+	
 
   <%}%>
   </div>
