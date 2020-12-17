@@ -51,6 +51,10 @@
 	<input type="date" id="resrv-date" name="resrv-date"
        
        min="1969-01-01" max="2077-12-31"> <br>
+       
+    <input type="checkbox" id="roundtrip-checkbox" name="roundtrip-checkbox" value="true">
+    <label for="roundtrip-checkbox"> Roundtrip</label> <br>
+       
     <input type="submit" value="Next">
 	</form>
 	
