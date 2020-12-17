@@ -12,6 +12,7 @@
 	</head>
 
 <body>
+<div>
 
 <h3>Sign up here:</h3>
 
@@ -50,7 +51,7 @@
 </form>
 
  <h4><a href='index.jsp'>Go back to welcome page</a></h4>
-
+</div>
 </body>
 
 </html>

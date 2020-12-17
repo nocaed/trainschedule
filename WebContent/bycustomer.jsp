@@ -15,6 +15,7 @@
 } else { 
 %>
 <body>
+<div>
 <h2>
 		Please enter the Customer's unique and identifying UserName:
 	</h2>
@@ -44,6 +45,6 @@
 
 
 <% } %>
-
+</div>
 </body>
 </html>

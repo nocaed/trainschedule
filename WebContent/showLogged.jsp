@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
 
 <%
 	// Username
@@ -63,6 +64,6 @@
 
 %>
 
-
+</div>
 </body>
 </html>

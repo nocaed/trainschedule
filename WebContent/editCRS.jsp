@@ -15,6 +15,7 @@
 } else { 
 %>
 <body>
+<div>
 <%
 	String ssn = request.getParameter("SSN");
 	String action = request.getParameter("action");
@@ -52,6 +53,6 @@
 }
 %>
 
-
+</div>
 </body>
 </html>

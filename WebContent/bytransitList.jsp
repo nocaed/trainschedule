@@ -14,7 +14,7 @@
 <% 
 } else { 
 %>
-<body>
+<body><div>
 <h3>List of Reservations by Transit Line Name:</h3>
 <%
 String line = request.getParameter("line");
@@ -118,6 +118,6 @@ out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
 %>
 
 
-<%} %>
+<%} %></div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <title>Admin</title>
 </head>
 <body>
-
+<div>
 
 <% 
 if(session.getAttribute("user")==null){
@@ -32,6 +32,7 @@ if(session.getAttribute("user")==null){
 	<br><br><a href='transitRev.jsp'>List of Revenue per Transit Line</a>
 	<br><br><a href='customerRev.jsp'>List of Revenue per Customer Name</a>
 	<br><br><a href='bestcustomer.jsp'>Best Customer</a>
+	<br><br><a href='best5Transit.jsp'>Best 5 Transit Lines</a>
 	<br><br><a href='logout.jsp'>Logout</a>
 	
 	<% 
@@ -39,5 +40,6 @@ if(session.getAttribute("user")==null){
 	%>
 
 </center>
+</div>
 </body>
 </html>

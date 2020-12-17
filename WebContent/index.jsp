@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<div>
 	<h3>Welcome to Online Railway Booking System: Group 48</h3>
 	<table>
 	<tr><td><h4>Please click on one of the following options:</h4></td></tr>
@@ -18,7 +19,7 @@
 	<tr><td><a href="signup.jsp">Sign up for a new account</a></td></tr>
 	
 	</table>
-
+</div>
 </body>
 
 </html>

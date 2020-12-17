@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div>
 <%
 	String username = request.getParameter("username");
 
@@ -59,6 +59,6 @@
 %>
 
  <a href='index.jsp'>Go to welcome page</a>
-
+</div>
 </body>
 </html>
