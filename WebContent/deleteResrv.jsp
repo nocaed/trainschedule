@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div>
   		<%
     		if(session.getAttribute("user") == null) {
@@ -18,11 +17,15 @@
   		<a href='index.jsp'>Login</a>
   		<%
     		} else {
-  		%>
-		<a href='currentResrv.jsp'>Current Reservations</a><br>
-		<a href='pastResrv.jsp'>Past Reservations</a>
+			
+    			int rnum = Integer.parseInt(request.getParameter("delete-reserv-drop"));
+    			ApplicationDB db = new ApplicationDB();	
+    			Connection con = db.getConnection();
+    			PreparedStatement st = con.prepareStatement("delete from Reservation where rnum=" + rnum);
+    			st.executeUpdate();
+    			response.sendRedirect("currentResrv.jsp");
+  %>
   	<%}%>
   	</div>
-
 </body>
 </html>

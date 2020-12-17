@@ -27,6 +27,7 @@
 		ApplicationDB db = new ApplicationDB();	
 		Connection con = db.getConnection();
 		String schedName = request.getParameter("schedule-reserv-drop");
+		session.setAttribute("transit_line", schedName);
 		Statement st = con.createStatement();
 		ResultSet rs; 
 		rs = st.executeQuery("select tid, fare, number_of_stops from Schedule where transit_name = '" + schedName + "'");

@@ -29,7 +29,7 @@
 		String is_roundtrip = request.getParameter("roundtrip-checkbox") == null ? "0" : "1";
 		String tid = (String) session.getAttribute("tid");
 		String username = (String) session.getAttribute("user");
-		String transit_line = request.getParameter("schedule-reserv-drop");
+		String transit_line = (String) session.getAttribute("transit_line");
 		String destinationName = request.getParameter("dest-reserv-drop");
 		int end_num = stationNames.indexOf(destinationName) + 1;
 		String date = request.getParameter("resrv-date");
@@ -48,8 +48,9 @@
 		cost -= cost * discount;
 		out.println("indvFare: " + indvFare);
 		out.println("roundtrip: " + is_roundtrip);
+		out.println("transit line: "+ transit_line);
        	PreparedStatement insert = con.prepareStatement
-       	("INSERT INTO Reservation VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+       	("INSERT INTO Reservation VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
        	
        	insert.setString(1, null);
        	insert.setString(2, date);
@@ -59,6 +60,7 @@
        	insert.setInt(6, start_num);
        	insert.setInt(7, end_num);
        	insert.setString(8, is_roundtrip);
+       	insert.setString(9, transit_line);
        	insert.executeUpdate();
 		
 	%>
