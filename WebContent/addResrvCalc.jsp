@@ -26,6 +26,7 @@
 	
 		ApplicationDB db = new ApplicationDB();	
 		Connection con = db.getConnection();
+		String is_roundtrip = request.getParameter("roundtrip-checkbox") == null ? "0" : "1";
 		String tid = (String) session.getAttribute("tid");
 		String username = (String) session.getAttribute("user");
 		String transit_line = request.getParameter("schedule-reserv-drop");
@@ -40,10 +41,15 @@
 		
 		double indvFare = fare / ((double) number_of_stops);
 		double cost = indvFare * stops_gone_through;
+		if (is_roundtrip.equals("1")) {
+			cost *= 2.0;
+		}
+		double discount = Double.parseDouble(session.getAttribute("discount").toString());
+		cost -= cost * discount;
 		out.println("indvFare: " + indvFare);
-		
+		out.println("roundtrip: " + is_roundtrip);
        	PreparedStatement insert = con.prepareStatement
-       	("INSERT INTO Reservation VALUES (?, ?, ?, ?, ?, ?, ?)");
+       	("INSERT INTO Reservation VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
        	
        	insert.setString(1, null);
        	insert.setString(2, date);
@@ -52,6 +58,7 @@
        	insert.setString(5, username);
        	insert.setInt(6, start_num);
        	insert.setInt(7, end_num);
+       	insert.setString(8, is_roundtrip);
        	insert.executeUpdate();
 		
 	%>
