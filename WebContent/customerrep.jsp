@@ -17,6 +17,7 @@
 	} else {
 	%>
 		<h1>Welcome Customer Representative!</h1><br>
+		<a href='editSchedules.jsp'>Edit Schedules</a><br>
 		<a href='answerquestions.jsp'>Answer Customer Questions</a><br>
 		<a href='schedulebystation.jsp'>View Train Schedules by Station</a><br>
 		<a href='customersbyreservationform.jsp'>Find Customers By Transit Line and Reservation Date</a><br>
