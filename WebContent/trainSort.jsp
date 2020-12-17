@@ -7,8 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="style.css">
-<title>Train Sortation</title>
+<title>Sorted Trains</title>
 </head>
+
+<body><div>
 
 <% 
 if(session.getAttribute("user")==null){
@@ -18,11 +20,7 @@ if(session.getAttribute("user")==null){
 <% 
 } else { 
 %>
-<body><div>
 	<h1>Sorted Train Schedules</h1>
-		
-
-		<h3>Sort Trains Schedules</h3>
 		
 		<%
 		

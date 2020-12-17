@@ -10,6 +10,8 @@
 <title>Train Stops</title>
 </head>
 
+<body><div>
+
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -18,7 +20,6 @@ if(session.getAttribute("user")==null){
 <% 
 } else { 
 %>
-<body><div>
 	
 
 		<h3>Trains Stops</h3>
@@ -28,7 +29,11 @@ if(session.getAttribute("user")==null){
     	String origin = request.getParameter("origin");   
    		String dest = request.getParameter("dest");
    		String transit_name = request.getParameter("transit_name"); 
-   		
+   	
+   		if(origin.equals("") || dest.equals("") || transit_name.equals("")){
+			out.print("Empty field at either origin or destination or transit name");
+		}
+   		else{
 		out.print("<table>");		
 			
 		out.print("<tr>");
@@ -107,13 +112,12 @@ if(session.getAttribute("user")==null){
 		st1.close();
 		rs1.close();
 		db.closeConnection(con);
+   		}
 		%>
 		<br><br>
 		<button onclick="window.location.href='browsing.jsp';">Return to Browse Home</button>
 	
 <%
-	
-//comment
 }
 %>
 </div></body>

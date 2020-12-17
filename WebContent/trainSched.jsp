@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Train Schedules Available</title>
 </head>
-
+<body><div>
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -18,8 +18,6 @@ if(session.getAttribute("user")==null){
 <% 
 } else { 
 %>
-<body><div>
-
 		<!-- search for train schedules 
 			by origin, destination, date of travel -->
 		<h1>Searched Schedule:</h1>
@@ -30,7 +28,11 @@ if(session.getAttribute("user")==null){
    		String dest = request.getParameter("dest");
 		String arrivalDate = request.getParameter("tDate");
 		
+		if(origin.equals("") || dest.equals("") || arrivalDate.equals("")){
+			out.print("Empty field at either origin or destination or date of travel");
+		}
 		
+		else{
 		ApplicationDB db = new ApplicationDB();
 	  	Connection con = db.getConnection();
 	   	String q2 = "SELECT a.origin, a.destination, a.arrival_date, a.tid AS train_ID,a.transit_name, a.travel_time, a.number_of_stops FROM Schedule a  WHERE a.origin = \'" + origin + "\' AND a.destination = \'" + dest + "\' AND a.arrival_date = \'" + arrivalDate + "\'";
@@ -84,21 +86,20 @@ if(session.getAttribute("user")==null){
 		}
 		
 		if(!hasSomething){
-			out.print("No Results Found");
+			out.print("No Results Found for this Search Combination");
 		}
 		
 		out.print("</table>");		
 
 		st2.close();
 		rs2.close();
-    		db.closeConnection(con);				
+    	db.closeConnection(con);		
+		}
 		%>
 		<br><br>
 		<button onclick="window.location.href='browsing.jsp';">Return to Browse Home</button>
 		
 <%
-	
-//comment
 }
 %>
 </div></body>
