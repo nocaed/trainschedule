@@ -21,15 +21,19 @@
 
 
 		<h1>Select a starting stop: </h1>
-		
-		<select name="origin" id="origin">
+		<form method="post" action="addResrvEnd.jsp">
+		<select name="origin-reserv-drop" id="origin-reserv-drop">
 		<%
 		ApplicationDB db = new ApplicationDB();	
 		Connection con = db.getConnection();
 		String schedName = request.getParameter("schedule-reserv-drop");
-		System.out.println("***********" + schedName + "*********");
 		Statement st = con.createStatement();
 		ResultSet rs; 
+		rs = st.executeQuery("select tid, fare, number_of_stops from Schedule where transit_name = '" + schedName + "'");
+		rs.next();
+		session.setAttribute("tid", rs.getString(1));
+		session.setAttribute("fare", rs.getDouble(2));
+		session.setAttribute("number_of_stops", rs.getInt(3));
 		rs = st.executeQuery("select sid from Stops where Stops.transit_name = '" + schedName + "' order by stop_num");		
 		ArrayList<String> sidList = new ArrayList<String>();
 		ArrayList<String> stationNames = new ArrayList<String>();
@@ -42,13 +46,18 @@
 			stationNames.add(rs.getString(1));
 		}
 		
-		for(int i = 0; i < stationNames.size(); i++) {
+		for(int i = 0; i < stationNames.size() - 1; i++) {
 			out.println("<option value='" + stationNames.get(i) + "'>" + stationNames.get(i) + "</option>");
 		}
+		session.setAttribute("stationNames", stationNames);
+		session.setAttribute("sidList", sidList);
 		%>
-	</select>
+	</select><br>
+	<input type="submit" value="Next">
+	</form>
   		<%}%>
   	</div>
+  	
   	
 </body>
 </html>

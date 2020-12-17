@@ -29,7 +29,8 @@
 		    rs = st.executeQuery("select transit_name from Schedule");
 			String schedName = "";
 		%>
-	<form method="post" action="addResrvStartAndEnd.jsp">
+	<h1>Which train line would you like to ride?</h1>
+	<form method="post" action="addResrvStart.jsp">
 	<select name="schedule-reserv-drop" id="schedule-resrv-drop">
 		<% 
 		  	while(rs.next()) {
