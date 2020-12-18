@@ -35,7 +35,7 @@
 	Connection con = db.getConnection();
 	// Statement for select query
 	Statement st = con.createStatement();
-    rs = st.executeQuery("select s.transit_name, res_date, cost, is_roundtrip from Reservation r join Stops s on origin = stop_num and s.transit_name = r.transit_name where res_date < CURRENT_DATE()");
+    rs = st.executeQuery("select s.transit_name, res_date, cost, is_roundtrip from Reservation r join Stops s on origin = stop_num and s.transit_name = r.transit_name where r.username = '" + username+ "' and res_date < CURRENT_DATE()");
     while(rs.next()) {
 	    String transit_name = rs.getString(1);
 	    String date = rs.getString(2);
