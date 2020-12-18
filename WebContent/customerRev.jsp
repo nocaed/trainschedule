@@ -9,6 +9,9 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Revenue per customer name</title>
 </head>
+
+<body>
+<div>
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -19,7 +22,6 @@ if(session.getAttribute("user")==null){
 } else { 
 %>
 
-<body><div>
 <h3>List of Revenue per Customer:</h3>
 <%
 ApplicationDB db = new ApplicationDB();	
@@ -76,6 +78,7 @@ while (rs.next())
 out.print("</table>");
 out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
 %>
-<%} %></div>
+<%} %>
+</div>
 </body>
 </html>

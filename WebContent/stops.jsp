@@ -30,7 +30,7 @@ if(session.getAttribute("user")==null){
    		String dest = request.getParameter("dest");
    		String transit_name = request.getParameter("transit_name"); 
    	
-   		if(origin.equals("") || dest.equals("") || transit_name.equals("")){
+   		if(origin==null || dest==null || transit_name==null || origin.equals("") || dest.equals("") || transit_name.equals("")){
 			out.print("Empty field at either origin or destination or transit name");
 		}
    		else{

@@ -9,6 +9,9 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Revenue per transit line</title>
 </head>
+
+<body>
+<div>
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -19,8 +22,6 @@ if(session.getAttribute("user")==null){
 } else { 
 %>
 
-<body>
-<div>
 <h3>List of Revenue per Transit Line:</h3>
 <%
 ApplicationDB db = new ApplicationDB();	

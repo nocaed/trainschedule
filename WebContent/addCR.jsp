@@ -9,6 +9,9 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Add Customer Representative</title>
 </head>
+
+<body> 
+<div>
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -17,8 +20,6 @@ if(session.getAttribute("user")==null){
 <% 
 } else { 
 %>
-<body> 
-<div>
 <h2>Add Information for New Customer Representative</h2>
 <table>
 <tr>

@@ -21,7 +21,7 @@ if(session.getAttribute("user")==null){
 } else { 
 %>
 
-<center><h1>Welcome to the Administrator's profile</h1>	
+    <h1>Welcome to the Administrator's profile</h1>	
 	<br>
 	<h2>Tools:</h2>
 	<br><a href='addCR.jsp'>Add Representative</a>
@@ -40,7 +40,6 @@ if(session.getAttribute("user")==null){
 	} 
 	%>
 
-</center>
 </div>
 </body>
 </html>

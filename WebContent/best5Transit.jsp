@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Insert title here</title>
 </head>
+<body>
+<div>
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -17,13 +19,11 @@ if(session.getAttribute("user")==null){
 <% 
 } else { 
 %>
-<body>
-<div>
 <%
 ApplicationDB db = new ApplicationDB();	
 Connection con = db.getConnection();
 Statement st = con.createStatement();
-String query = "select transit_name as transit, count(*) as res from Schedule join Reservation using (tid) group by transit order by res desc limit 5";
+String query = "select transit_name as transit, count(*) as res from Reservation group by transit order by res desc limit 5";
 
 ResultSet rs;
 rs=st.executeQuery(query);
@@ -63,7 +63,8 @@ rs=st.executeQuery(query);
 			out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
 	
 %>
-</div>
+
 <%} %>
+</div>
 </body>
 </html>

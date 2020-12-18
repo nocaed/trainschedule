@@ -9,13 +9,14 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Delete Customer Representative</title>
 </head>
+
+<body><div>
 <% if(session.getAttribute("user")==null){ %>
 <h3>You are not logged in</h3><br/>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body><div>
 <h2>Delete Existing Employee</h2>
 
 	<table>

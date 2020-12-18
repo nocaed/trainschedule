@@ -9,18 +9,21 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Result</title>
 </head>
+
+<body>
+<div>
 <% if(session.getAttribute("user")==null){ %>
 <h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body>
-<div>
 <%
 String ssn = request.getParameter("SSN");
-String action = request.getParameter("action");
-String newVal = request.getParameter("newVal");
+if(ssn==null || ssn.equals("")){
+	out.print("Empty field for SSN, <a href='deleteCR.jsp'>Try Again</a>");
+}
+else{
 ApplicationDB db = new ApplicationDB();	
 Connection con = db.getConnection();
 Statement st = con.createStatement();
@@ -32,6 +35,7 @@ if(rs.next()){
 }
 else{
 	out.print("Employee with given SSN does not exist. <a href='deleteCR.jsp'>Try again</a>");
+}
 }
 %>
 

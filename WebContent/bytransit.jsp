@@ -9,7 +9,10 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Reservations by Transit line</title>
 </head>
-<% 
+
+<body>
+ <div>
+ <% 
 if(session.getAttribute("user")==null){
 %>
 
@@ -18,8 +21,6 @@ if(session.getAttribute("user")==null){
 <% 
 } else { 
 %>
-<body>
- <div>
  <h2>
  
 		Please enter the Transit Line name:

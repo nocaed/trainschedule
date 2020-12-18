@@ -9,14 +9,15 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Edit Customer Representative</title>
 </head>
+
+<body>
+<div>
 <% if(session.getAttribute("user")==null){ %>
 You are not logged in<br/>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body>
-<div>
 <h2>Edit Existing Customer Representative Data </h2>
 
 	<table>

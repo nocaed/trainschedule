@@ -9,17 +9,19 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Reservations by Transit line</title>
 </head>
+
+<body>
+<div>
 <% if(session.getAttribute("user")==null){ %>
 <h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body><div>
 <h3>List of Reservations by Transit Line Name:</h3>
 <%
 String line = request.getParameter("line");
-if(line==null){
+if(line==null || line.equals("")){
 	out.print("Empty Transit Line Name. <a href='bytransit.jsp'>Try again</a>");
 }
 else{
@@ -119,6 +121,7 @@ out.print("<h4> <a href='admin.jsp'>Go to Your Admin Tools</a> </h4>");
 %>
 
 
-<%} %></div>
+<%} %>
+</div>
 </body>
 </html>

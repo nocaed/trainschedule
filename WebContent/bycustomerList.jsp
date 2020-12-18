@@ -9,18 +9,19 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Reservations by Customer Username</title>
 </head>
+<body>
+<div>
 <% if(session.getAttribute("user")==null){ %>
 <h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body><div>
 <h3>List of Reservations by Customer's Username:</h3>
 
 <%
 String line = request.getParameter("username");
-if(line==null){
+if(line==null || line.equals("")){
 	out.print("Empty Customer User Name. <a href='bycustomer.jsp'>Try again</a>");
 }
 else{

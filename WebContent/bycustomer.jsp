@@ -9,14 +9,15 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Reservations by Customer Username</title>
 </head>
+
+<body>
+<div>
 <% if(session.getAttribute("user")==null){ %>
 <h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body>
-<div>
 <h2>
 		Please enter the Customer's unique and identifying UserName:
 	</h2>

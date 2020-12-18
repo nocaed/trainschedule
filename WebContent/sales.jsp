@@ -9,6 +9,9 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Sales Report</title>
 </head>
+
+<body>
+<div>
 <%
     if ((session.getAttribute("user") == null)) {
 %>
@@ -16,8 +19,6 @@
 <a href="index.jsp">Please Login</a>
 <%} else {
 %>
-<body>
-<div>
 <%
 ApplicationDB db = new ApplicationDB();	
 Connection con = db.getConnection();

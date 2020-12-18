@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Best Customer</title>
 </head>
+<body>
+<div>
 <% 
 if(session.getAttribute("user")==null){
 %>
@@ -17,8 +19,6 @@ if(session.getAttribute("user")==null){
 <%
 } else { 
 %>
-<body>
-<div>
 <h3>Best Customer:</h3>
 <% 
 ApplicationDB db = new ApplicationDB();	

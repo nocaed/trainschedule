@@ -9,14 +9,14 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Result</title>
 </head>
+<body>
+<div>
 <% if(session.getAttribute("user")==null){ %>
 <h3>You are not logged in</h3>
 <a href='index.jsp'>Login</a>
 <% 
 } else { 
 %>
-<body>
-<div>
 <%
 	
 	String ssn = request.getParameter("ssn");
@@ -24,6 +24,10 @@
 	String last = request.getParameter("last");
 	String username = request.getParameter("username");
 	String pwd = request.getParameter("pwd");
+	if(ssn==null || first==null || last==null || username==null || pwd==null || ssn.equals("") || first.equals("") || last.equals("") || username.equals("") || pwd.equals("")){
+		out.print("Either ssn or firstname or lastname or username or password was empty. <a href='addCR.jsp'>Try Again</a>");
+	}
+	else{
 	ApplicationDB db = new ApplicationDB();	
 	Connection con = db.getConnection();
 	Statement st = con.createStatement();
@@ -45,7 +49,7 @@
 		        	update.executeUpdate();
 		        	out.print("Employee added.<br> <a href='admin.jsp'>Back to your Admin tools</a>");
 	}
-	
+	}
 %>
 
 

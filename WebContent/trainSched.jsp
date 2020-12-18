@@ -28,7 +28,7 @@ if(session.getAttribute("user")==null){
    		String dest = request.getParameter("dest");
 		String arrivalDate = request.getParameter("tDate");
 		
-		if(origin.equals("") || dest.equals("") || arrivalDate.equals("")){
+		if(origin==null || dest==null || arrivalDate==null || origin.equals("") || dest.equals("") || arrivalDate.equals("")){
 			out.print("Empty field at either origin or destination or date of travel");
 		}
 		
