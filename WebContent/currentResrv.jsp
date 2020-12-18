@@ -39,7 +39,7 @@
 	Statement st = con.createStatement();
 	int i = 0;
 	ArrayList<Integer> rnumList = new ArrayList<Integer>();
-    rs = st.executeQuery("select rnum, s.transit_name, res_date, cost, is_roundtrip from Reservation r join Stops s on origin = stop_num and s.transit_name = r.transit_name where res_date >= CURRENT_DATE()");
+    rs = st.executeQuery("select rnum, s.transit_name, res_date, cost, is_roundtrip from Reservation r join Stops s on origin = stop_num and s.transit_name = r.transit_name where r.username='" + username+ "'and res_date >= CURRENT_DATE()");
     while(rs.next()) {
     	int rnum = rs.getInt(1);
     	rnumList.add(rnum);
@@ -66,7 +66,7 @@
   %>
   </table> <br><br>
   <form method="post" action="deleteResrv.jsp">
-  Reservation to delete: 
+  Reservation to cancel: 
   <select name="delete-reserv-drop" id="delete-reserv-drop">
   	<%
  	for(int j  = 0; j< rnumList.size(); j++) {

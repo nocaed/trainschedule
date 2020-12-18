@@ -22,6 +22,12 @@
     		<%
     		
     		String field = (String)session.getAttribute("field");
+    		if (field == null) {
+    			%>
+    			Invalid input
+    			<a href="customerrep.jsp">Back to home</a>
+    			<%
+    		} else {
     		String schedule = (String) session.getAttribute("schedule");
     		String input = request.getParameter(field + "-text");
     		int num_stops = (Integer) session.getAttribute("stop_num");
@@ -48,7 +54,7 @@
     		<h3>Success!</h3><br>
     		<a href="customerrep.jsp">Back to home</a>
     		
-	<%}%>
+	<%}}%>
 			</div>
 </body>
 </html>
