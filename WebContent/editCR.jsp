@@ -21,6 +21,7 @@ You are not logged in<br/>
 <h2>Edit Existing Customer Representative Data </h2>
 
 	<table>
+	<form method="post" action="editCRS.jsp">
 		<tr>
 		<td>Enter SSN of Customer Representative you want to edit:</td>
 		<td><input type="text" name="SSN"></td>
@@ -45,10 +46,12 @@ You are not logged in<br/>
 		</tr>
 		
 		<tr> <td></td>
-		<td><form method="post" action="editCRS.jsp">
-		<input type="submit" value="UPDATE">
-		</form></td>
 		<td>
+		<input type="submit" value="UPDATE">
+		</td>
+		</form>
+		<td>
+		
 		<form method = "post" action="admin.jsp">
 		<input type="submit" value="CANCEL">
 		</form></td></tr>

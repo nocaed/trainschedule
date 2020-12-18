@@ -34,26 +34,15 @@ if(session.getAttribute("user")==null){
 			out.print("Empty field at either origin or destination or transit name");
 		}
    		else{
-		out.print("<table>");		
 			
-		out.print("<tr>");
-			out.print("<th>Origin</td>");
-			out.print("<th>Departure Time</td>");
-			out.print("<th>Transit Name</td>");
-			out.print("<th>Arrival Date</td>");
-			out.print("<th>Fare</td>");
-			out.print("<th>Train ID</td>");
-			out.print("<th>Stop Number</td>");
-			out.print("<th>sid</td>");
-			out.print("<th>Arrival Time</td>");
-			out.print("<th>Departure Time</td>");
-    		out.print("</tr>");
-    		out.print("<h1>"+ origin+ dest+ transit_name+"</h1>");
+			
+    		out.print("<h3>"+ origin +" "+dest+" "+transit_name+"</h3>");
     		
     		String queryToGetTidString = "(Select a.tid from Schedule a where a.origin = '%s' AND a.destination = '%s' and a.transit_name = '%s')";
     		String queryToGetTid = String.format(queryToGetTidString,origin,dest,transit_name);
     			  	
-    		String queryToGetSidString ="Select * from Stops b where b.tid IN " + queryToGetTid;
+    		String queryToGetSidString ="select s.sid, s.name, s.city, s.state, c.stop_num from Stops c, Station s where s.sid=c.sid and c.tid in " + queryToGetTid;
+    		//String query = "select s.name, s.city, s.state, c.stop_num from Station s, Stops c where s.sid=c.sid and c.sid IN "+ queryToGetSidString +" order by c.stop_num asc";
     		//String queryToGetSidString2 ="Select * from Stops b where b.tid = 1"; 	   	
     		
     	
@@ -64,41 +53,33 @@ if(session.getAttribute("user")==null){
 			ResultSet rs1 = st1.executeQuery(queryToGetSidString);
 			
 		boolean hasSomething = false;
+		out.print("<table>");
+		out.print("<tr><td>");
+		out.print("Name");
+	out.print("</td>");
+	out.print("<td>");
+		out.print("City");
+	out.print("</td>");
+	out.print("<td>");
+		out.print("State");
+	out.print("</td>");
+	out.print("</tr>");
 		
 		while(rs1.next()){
 			hasSomething = true;
 			
 				out.print("<tr>");
+									
 					out.print("<td>");
-						out.print(origin);
+					out.print(rs1.getString(2));
+					out.print("</td>");
+					
+					out.print("<td>");
+					out.print(rs1.getString(3));
 					out.print("</td>");
 					out.print("<td>");
-						out.print(dest);
+					out.print(rs1.getString(4));
 					out.print("</td>");
-					out.print("<td>");
-						out.print(transit_name);
-					out.print("</td>");				
-					out.print("<td>");
-						out.print("arrival_date");
-					out.print("</td>");
-					out.print("<td>");
-						out.print(rs1.getString("fare"));
-					out.print("</td>");
-					out.print("<td>");
-						out.print(rs1.getString("tid"));
-					out.print("</td>");
-					out.print("<td>");
-						out.print(rs1.getString("stop_num"));
-					out.print("</td>");	
-					out.print("<td>");
-						out.print(rs1.getString("sid"));
-					out.print("</td>");
-					out.print("<td>");
-						out.print(rs1.getString("arrival_time"));
-					out.print("</td>");
-					out.print("<td>");
-						out.print(rs1.getString("departure_time"));
-					out.print("</td>");	
 				out.print("</tr>");
 		}
 			

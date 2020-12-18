@@ -20,14 +20,16 @@
 <h2>Delete Existing Employee</h2>
 
 	<table>
+	<form method="post" action="deleteCRS.jsp">
 		<tr>
 		<td>Enter SSN of Customer Representative you want to Delete:</td>
 		<td><input type="text" name="SSN"></td>
 		</tr> 
 		<tr><td></td>
-		<td><form method="post" action="deleteCRS.jsp">
+		<td>
 		<input type="submit" value="DELETE">
-		</form></td>
+		</td>
+		</form>
 		<td>
 		<form method = "post" action="admin.jsp">
 		<input type="submit" value="CANCEL">

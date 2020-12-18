@@ -22,10 +22,10 @@ if(session.getAttribute("user")==null){
 %>
 <h2>Add Information for New Customer Representative</h2>
 <table>
-<tr>
-
-	
-		<td><label for="ssn">SSN in Format ###-##-####:</label></td>
+<form method="post" action="addCRS.jsp">
+    
+    <tr>
+        <td><label for="ssn">SSN in Format ###-##-####:</label></td>
 		<td><input type="text" id="ssn" name="ssn"></td>
 	</tr>
 	<tr>
@@ -47,10 +47,9 @@ if(session.getAttribute("user")==null){
 	<tr>
 		<td></td>
 		<td>
-		<form method="post" action="addCRS.jsp">
-		<input type="submit" value="Register Customer Representative"></form>
+   <input type="submit" value="Register Customer Representative">
 		</td>
-		
+	</form>	
 		<td>
 		<form method = "post" action="admin.jsp">
 		<input type="submit" value="Cancel"></form>
