@@ -10,16 +10,22 @@
 <title>Ask a Question</title>
 </head>
 <body>
+	<div>
 		<%
 		// get username from session
 		String username = session.getAttribute("user").toString();
 		// get question from input form
 		String q = request.getParameter("question");
 		// prepare and execute query
-		CustomerSupportHandler csh = new CustomerSupportHandler();
-		csh.askNewQuestion(username, q);
-		// display success message and redirect user to question homepage
-		out.println("<h1>Success!</h1><br><a href='customerquestions.jsp'>Return to customer service page</a>");
+		if(!q.replace(" ", "").equals("")) {
+			CustomerSupportHandler csh = new CustomerSupportHandler();
+			csh.askNewQuestion(username, q);
+			// display success message and redirect user to question homepage
+			out.println("<h1>Success!</h1><br><a href='customerquestions.jsp'>Return to customer service page</a>");
+		} else {
+			out.println("<h1>Error, question field cannot be blank.</h1><br><a href='customerquestions.jsp'>Return to customer service page</a>");
+		}
 		%>
+	</div>
 </body>
 </html>
