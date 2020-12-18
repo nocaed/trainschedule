@@ -20,7 +20,7 @@
 	<%
 	} else {
 	%>
-	<h1>Your reservation:</h1>
+	<h1>Your reservation has been made!</h1><br>
 	<% 
 		ArrayList<String> sidList = (ArrayList<String>) session.getAttribute("sidList");
 		ArrayList<String> stationNames = (ArrayList<String>) session.getAttribute("stationNames");
@@ -47,9 +47,6 @@
 		}
 		double discount = Double.parseDouble(session.getAttribute("discount").toString());
 		cost -= cost * discount;
-		out.println("indvFare: " + indvFare);
-		out.println("roundtrip: " + is_roundtrip);
-		out.println("transit line: "+ transit_line);
        	PreparedStatement insert = con.prepareStatement
        	("INSERT INTO Reservation VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
        	
@@ -65,6 +62,7 @@
        	insert.executeUpdate();
 		
 	%>
+	<a href="customer.jsp">Back home</a>
 
 <%}%>
 

@@ -54,7 +54,8 @@
 	      out.println("</tr>");
     }
   %>
-</table>
+</table><br>
+	<a href="customer.jsp">Back</a>
   	<%}%>
   	</div>
 </body>

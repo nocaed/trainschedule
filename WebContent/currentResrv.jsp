@@ -76,7 +76,8 @@
   </select>
   <input type="submit" value="Cancel">
 
-  </form>
+  </form><br>
+  <a href="customer.jsp">Back</a>
   
   	<%}%>
   	</div>

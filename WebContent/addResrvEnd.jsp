@@ -48,7 +48,7 @@
 	</select>
 	
 	<br>
-	Select a date for your reservation:<br>
+	Select a date for your reservation (yyyy-mm-dd):<br>
 	<input type="date" id="resrv-date" name="resrv-date"
        
        min="1969-01-01" max="2077-12-31"> <br>

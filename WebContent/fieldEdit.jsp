@@ -56,7 +56,7 @@
 					<%
 				} else {
 					%>
-					<h3>Enter new arrival date</h3>
+					<h3>Enter new arrival date (yyyy-mm-dd)</h3>
 					<input type="date" id="arrival_date-text" name="arrival_date-text">
 					<%
 				}
